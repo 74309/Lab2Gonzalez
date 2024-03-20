@@ -12,10 +12,14 @@ public class SpawnManager : MonoBehaviour
     public float sideSpawnMaxZ;
     public float sideSpawnMinZ;
     public float sideSpawnX;
+    private float spawnLeftInterval = 2.5f;
+    private float spawnRightInterval = 3.5f;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        InvokeRepeating("SpawnRightAnimal", startDelay, spawnRightInterval);
+        InvokeRepeating("SpawnLeftAnimal", startDelay, spawnLeftInterval);
     }
 
     // Update is called once per frame
