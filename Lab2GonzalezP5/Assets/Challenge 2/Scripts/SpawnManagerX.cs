@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
-    public GameObject[] ballPrefabs;
+    public GameObject[] CarPrefabs;
 
     public float spawnLimitXLeft = -22;
     public float spawnLimitXRight = 7;
@@ -22,12 +22,12 @@ public class SpawnManagerX : MonoBehaviour
     // Spawn random ball at random x position at top of play area
     void SpawnRandomBall ()
     {
-        int BallIndex = Random.Range(0, ballPrefabs.Length);
+        int BallIndex = Random.Range(0, CarPrefabs.Length);
         // Generate random ball index and random spawn position
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
 
         // instantiate ball at random spawn location
-        Instantiate(ballPrefabs[BallIndex], spawnPos, ballPrefabs[BallIndex].transform.rotation);
+        Instantiate(CarPrefabs[BallIndex], spawnPos, CarPrefabs[BallIndex].transform.rotation);
     }
 
 }
